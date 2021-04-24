@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function first(first) {
+        const firstName = first;
+        let dept = 1;
+        let other = 3;
+        debugger; // 第一个 debugger
+        return function second(second) {
+            const secondName = firstName + '/' + second;
+            dept = 2;
+            debugger; // 第二个 debugger
+            return function third(third) {
+                const thirdName = secondName + '/' + third;
+                dept = 3;
+                debugger; //  第三个 debugger
+            };
+        };
+        }
+        const x = first('白')('小')('唯');
+        // const y = first('白')('小');
+        debugger; // 第四个 debugger
+    </script>
+</body>
+</html>
