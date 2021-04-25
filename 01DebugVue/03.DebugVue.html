@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <p>{{v_c}}</p>
+    <button @click="changeB"> change v_b </button>
+  </div>
+  <script>
+
+    new Vue({
+      el:'#app',
+      data(){
+        return {
+          v_a : 1,
+          v_b : 2,
+        }
+      },
+      computed:{
+        v_c(){
+          console.log(this.v_b)
+          return this.v_a + 1;
+        }
+      },
+      methods:{
+        changeB(){
+          this.v_b += 1;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
